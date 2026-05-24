@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-bg-base: #FAF7F2;
+  --color-bg-card: #FFFFFF;
+  --color-bg-cream: #F2EDE4;
+  --color-text-main: #4A443F;
+  --color-text-muted: #A69E94;
+  --color-border-main: #E9E1D6;
+  --color-border-card: #F0EBE3;
+  --color-sage: #7E8C78;
+  --color-dark-sage: #5C6658;
+  --color-oak: #D4A373;
+  --color-lavender: #9E86A8;
+}
+
+.dark {
+  --color-bg-base: #141312;
+  --color-bg-card: #1C1A19;
+  --color-bg-cream: #23211F;
+  --color-text-main: #E6DFD5;
+  --color-text-muted: #8E867E;
+  --color-border-main: #2C2927;
+  --color-border-card: #33302E;
+  --color-sage: #9AB291;
+  --color-dark-sage: #C1D8BC;
+  --color-oak: #E8B98C;
+  --color-lavender: #C2ADD1;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-display: "Lora", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Bind custom colors to standard CSS custom properties so any components using them reflect theme changes */
+  --color-[#faf7f2]: var(--color-bg-base);
+  --color-natural-bg: var(--color-bg-base);
+  --color-natural-text: var(--color-text-main);
+  --color-natural-sage: var(--color-sage);
+  --color-natural-dark-sage: var(--color-dark-sage);
+  --color-natural-oak: var(--color-oak);
+  --color-natural-lavender: var(--color-lavender);
+  --color-natural-border: var(--color-border-main);
+  --color-natural-card-border: var(--color-border-card);
+  --color-natural-cream: var(--color-bg-cream);
+}
+
+/* Global body styling adapting to theme variables */
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Clean Custom Scrollbars mapping to theme variables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.2);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(230, 223, 213, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.4);
+}
+
+/* Subtle keyframe animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+/* Dynamic CSS class mapper rules for dark mode mapping to our warm-natural palette */
+.dark .bg-white {
+  background-color: var(--color-bg-card) !important;
+}
+
+.dark .bg-\[\#FAF7F2\] {
+  background-color: var(--color-bg-base) !important;
+}
+
+.dark .bg-\[\#FAF7F2\]\/40 {
+  background-color: rgba(35, 33, 31, 0.4) !important;
+}
+
+.dark .bg-\[\#FAF7F2\]\/50 {
+  background-color: rgba(35, 33, 31, 0.5) !important;
+}
+
+.dark .bg-\[\#F2EDE4\] {
+  background-color: var(--color-bg-cream) !important;
+}
+
+.dark .text-\[\#4A443F\] {
+  color: var(--color-text-main) !important;
+}
+
+.dark .text-\[\#4A443F\]\/80 {
+  color: rgba(230, 223, 213, 0.8) !important;
+}
+
+.dark .text-\[\#A69E94\] {
+  color: var(--color-text-muted) !important;
+}
+
+.dark .text-\[\#A69E94\]\/70 {
+  color: rgba(142, 134, 126, 0.7) !important;
+}
+
+.dark .border-\[\#E9E1D6\] {
+  border-color: var(--color-border-main) !important;
+}
+
+.dark .border-\[\#F0EBE3\] {
+  border-color: var(--color-border-card) !important;
+}
+
+.dark .text-\[\#7E8C78\] {
+  color: var(--color-sage) !important;
+}
+
+.dark .bg-\[\#7E8C78\] {
+  background-color: var(--color-sage) !important;
+}
+
+.dark .bg-\[\#7E8C78\]\/10 {
+  background-color: rgba(154, 178, 145, 0.1) !important;
+}
+
+.dark .text-\[\#5C6658\] {
+  color: var(--color-dark-sage) !important;
+}
+
+.dark .bg-\[\#5C6658\] {
+  background-color: var(--color-dark-sage) !important;
+}
+
+.dark .text-\[\#D4A373\] {
+  color: var(--color-oak) !important;
+}
+
+.dark .bg-\[\#D4A373\] {
+  background-color: var(--color-oak) !important;
+}
+
+.dark .text-\[\#9E86A8\] {
+  color: var(--color-lavender) !important;
+}
+
+.dark .bg-\[\#9E86A8\] {
+  background-color: var(--color-lavender) !important;
+}
+
+.dark .hover\:bg-\[\#FAF7F2\]\/40:hover {
+  background-color: rgba(35, 33, 31, 0.4) !important;
+}
+
+.dark .hover\:bg-\[\#FAF7F2\]:hover {
+  background-color: var(--color-bg-cream) !important;
+}
+
+.dark .hover\:bg-\[\#E9E1D6\]\/40:hover {
+  background-color: rgba(44, 41, 39, 0.4) !important;
+}
+
+.dark .hover\:bg-\[\#E9E1D6\]\/50:hover {
+  background-color: rgba(44, 41, 39, 0.5) !important;
+}
+
+.dark .focus\:bg-white:focus {
+  background-color: var(--color-bg-card) !important;
+}
+
+.dark .placeholder-\[\#A69E94\]\/70::placeholder {
+  color: rgba(142, 134, 126, 0.6) !important;
+}
+
+/* Custom Recharts Dark Tones overrides via SVG classes */
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: var(--color-border-main) !important;
+  opacity: 0.5;
+}
+
+.dark .recharts-text {
+  fill: var(--color-text-muted) !important;
+}
+
+.dark .recharts-legend-item-text {
+  color: var(--color-text-main) !important;
+}
+
+.dark .recharts-tooltip-cursor {
+  fill: rgba(230, 223, 213, 0.05) !important;
+}
+
+/* Direct dark-mode overrides for select component dropdown options */
+.dark select {
+  background-color: var(--color-bg-cream) !important;
+  color: var(--color-text-main) !important;
+}
+
+.dark select option {
+  background-color: var(--color-bg-card) !important;
+  color: var(--color-text-main) !important;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(0.2) saturate(1) hue-rotate(20deg);
+}
+
+.dark input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(0.2) saturate(1) hue-rotate(20deg);
+}

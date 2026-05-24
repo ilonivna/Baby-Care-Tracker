@@ -1,0 +1,6 @@
+{
+  "name": "Baby Care Tracker",
+  "description": "Logs baby's feeds (ml), diaper changes, and sleep duration with scheduled routine alerts and dynamic average weekly food consumption analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
